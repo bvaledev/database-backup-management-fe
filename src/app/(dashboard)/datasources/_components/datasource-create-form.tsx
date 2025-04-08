@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { createDatasource } from "~/actions/datasource"
 import { Button } from "~/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "~/components/ui/card"
+import { Card, CardContent, CardFooter } from "~/components/ui/card"
 import { Form } from "~/components/ui/form"
 import { DatasourceForm } from "./datasource-form"
 import { datasourceFormSchema, DatasourceFormSchema, SSLMode } from "./datasource-schema"
@@ -44,9 +44,6 @@ export function DatasourceCreateForm() {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleCreateDatasource)}>
         <Card>
-          <CardHeader>
-            <CardTitle>Detalhes do novo datasource</CardTitle>
-          </CardHeader>
           <CardContent>
             <DatasourceForm />
           </CardContent>

@@ -12,7 +12,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col gap-4 ">
+    <div className="flex flex-col gap-4 min-h-[100dvh] bg-slate-200 pb-12">
       <AppHeader />
       <main className="container mx-auto px-4">
         {children}

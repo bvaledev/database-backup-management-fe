@@ -23,8 +23,8 @@ export default async function DatasourcesPage() {
         </div>
       </div>
 
-      <Card className="pb-0">
-        <CardContent className="p-0">
+      <Card>
+        <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
@@ -45,7 +45,7 @@ export default async function DatasourcesPage() {
                     <TableCell>{d.cron.enabled ? 'Ativo' : 'Inativo'}</TableCell>
                     <TableCell>
                       <Link href={`/datasources/${d.id}`}>
-                        <Button size="sm" variant="link">
+                        <Button size="sm" variant="outline">
                           Detalhes
                         </Button>
                       </Link>

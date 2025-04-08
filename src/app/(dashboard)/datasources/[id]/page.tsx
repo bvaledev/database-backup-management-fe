@@ -38,16 +38,16 @@ export default async function UpdateDatasourcesPage({ params }: { params: Promis
           <DeleteDatasourceButton datasourceId={datasource.id} />
         </div>
       </div>
-      <div className="grid gap-2 items-start grid-cols-1 sm:grid-cols-2">
+      <div className="grid gap-4 items-start grid-cols-1 sm:grid-cols-2">
         <DatasourceUpdateForm datasource={datasource} />
-        <Card className="pb-0">
+        <Card>
           <CardHeader>
             <CardTitle>Backups</CardTitle>
             <CardDescription>
               <CreateBackupButton datasourceId={datasource.id} />
             </CardDescription>
           </CardHeader>
-          <CardContent className="p-0">
+          <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>

@@ -20,7 +20,7 @@ export function Navbar() {
           <Link
             key={page.href}
             href={page.href}
-            className={cn(isCurrentPage && 'bg-slate-800', 'px-4 py-4 text-slate-50 uppercase text-sm font-semibold hover:bg-slate-800 transition-colors ease-in-out')}>
+            className={cn(isCurrentPage && 'brightness-110', 'px-4 py-4 text-slate-50 uppercase text-sm font-semibold bg-blue-950 hover:brightness-125 transition-colors ease-in-out')}>
             {page.label}
           </Link>
         )

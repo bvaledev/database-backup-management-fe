@@ -3,6 +3,17 @@
 import { DatabaseBackup } from "lucide-react"
 import { toast } from "sonner"
 import { createBackup } from "~/actions/backup"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "~/components/ui/alert-dialog"
 import { Button } from "~/components/ui/button"
 
 type Props = {
@@ -18,8 +29,26 @@ export function CreateBackupButton({ datasourceId }: Props) {
     })
   }
 
-  return <Button onClick={handleCreateBackup}>
-    <DatabaseBackup />
-    Criar Backup
-  </Button>
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button >
+          <DatabaseBackup />
+          Criar Backup
+        </Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Você tem certeza?</AlertDialogTitle>
+          <AlertDialogDescription>
+            Esta ação seria inicializada e pode demorar alguns minutos para finalizar.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancelar</AlertDialogCancel>
+          <AlertDialogAction onClick={handleCreateBackup}>Continuar</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  )
 }
